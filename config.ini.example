@@ -1,1 +1,9 @@
+[conn PDO]
+dsn = "mysql:host=localhost;dbname=cidades_estados"
+username = development
+password = 123456
+
+[webserviceCEP Phpmg\Webservice\Server\Cep]
+db = [conn]
+
 [router Respect\Rest\Router]

@@ -1,4 +1,5 @@
 # PHP-MG Cep
+O codigo inicial deste projeto foi desenvolvido no DOJO que aconteceu no dia 08/10, no Segundo PHPMG Talks
 
 ### Requerimentos
 * PHP 5.3
@@ -6,27 +7,22 @@
 
 
 ### Dependências
-* Respect\Rest       - http://github.com/Respect/Rest#readme
-* Respect\Loader     - http://github.com/Respect/Loader
-* Respect\Config     - http://github.com/Respect/Config
+* Respect Rest        - http://github.com/Respect/Rest
+* Respect Config      - http://github.com/Respect/Config
+* Symfony ClassLoader - https://github.com/symfony/ClassLoader.git
 
 ### Instalação
 1. Clone o repositório;
+2. Instalar as dependências usando o comando:
+    php bin/vendors install
+3. Criar o banco de dados usando o arquivo contido em data/mysql-data.sql
+4. Criar seu arquivo local de configurações chamado config.ini baseado no config.ini.example, altere as variaveis de conexão apenas
 
 
 ### TODO
 1. TODO's no código.
 2. Normalizar o banco de dados e criar o script para migração dos dados desnormalizados para a estrutura normalizada;
 3. Melhorar o tratamento de erros;
-
-
-### Autores (Ordem Alfabetica :D)
-* Augusto Pascutti <...@...>
-* Charles Schaefer <...@...>
-* Daniel Golgher <contato@2km.com.br>
-* Diego H. Oliveira <contato@diegoholiveira.com.br>
-* Guilherme A. David D. Ferreira <contato@guilhermedavid.com.br>
-* Gustavo ... <...@...>
 
 
 ### Contribuindo

@@ -4,24 +4,27 @@
  * 
  */
 
+defined('CONFIG_FILE') or
+    define('CONFIG_FILE', __DIR__ . '/../config.ini');
+
+require_once __DIR__ . '/../autoloader.php';
+
 use Respect\Config\Container;
-use Webservice\Server\Cep;
 
-/*
- * Full path to the library directory. Should be something like:
- * define('LIBS', '/usr/lib/php/');
- * But we need the libs at GitHub.
- *
+// Obtem o container de dependências
+$app = new Container(CONFIG_FILE);
+
+/**
+ * Registra a rota que responderá pela
+ * consulta de CEP ao banco de dados
+ * 
+ * @TODO Descobrir como usar os filtros "when" e o tipo de request "accept" em classes "Routable"
  */
-define('LIBS', __DIR__ . '/../library');
-set_include_path(get_include_path() . PATH_SEPARATOR . LIBS);
-spl_autoload_register(require 'Respect/Loader.php');
+$app->router->get('/cep/*/formato/*', $app->webserviceCEP);
 
-$app = new Container('../config.ini');
-
-#TODO Descobrir como usar os filtros "when" e o tipo de request "accept" em classes "Routable"
-$app->router->get('/cep/*/*', new Cep);
-
+/**
+ * para qualquer outra rota lança um erro 404
+ */
 $app->router->get('/**', function()
 {
     header("HTTP/1.1 404 Not Found");

@@ -1,0 +1,8 @@
+[symfony-loader]
+    git=https://github.com/symfony/ClassLoader.git
+
+[respect-config]
+    git=https://github.com/Respect/Config.git
+
+[respect-rest]
+    git=https://github.com/Respect/Rest.git
