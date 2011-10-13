@@ -53,11 +53,12 @@ class Mapper
 
     public function fetch(Finder $finder, Sql $sqlExtra=null)
     {
-        $statement = $this->createStatement($finder);
+        
+        $statement = $this->createStatement($finder);;
         $hydrated = $this->schema->fetchHydrated($finder, $statement);
         if (!$hydrated)
             return false;
-
+        
         return $this->parseHydrated($hydrated);
     }
 

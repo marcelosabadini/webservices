@@ -22,9 +22,12 @@ class Sql
 
     protected function preBuild($operation, $parts)
     {
+
         $parts = $this->normalizeParts($parts, $operation === 'on' ? true : false);
         if (empty($parts))
             return $this;
+
+        
         $this->buildOperation($operation);
         return $this->build($operation, $parts);
     }

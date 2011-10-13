@@ -28,10 +28,10 @@ abstract class AbstractExtractor implements Schemable
     {
         $finders = iterator_to_array(FinderIterator::recursive($finder), true);
         $sql = new Sql;
-
+        
         $this->buildSelectStatement($sql, $finders);
         $this->buildTables($sql, $finders);
-
+        
         return $sql;
     }
 
@@ -58,7 +58,7 @@ abstract class AbstractExtractor implements Schemable
     protected function buildTables(Sql $sql, $finders)
     {
         $conditions = $aliases = array();
-
+        
         foreach ($finders as $alias => $finder)
             $this->parseFinder($sql, $finder, $alias, $aliases, $conditions);
 
