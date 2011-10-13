@@ -6,15 +6,16 @@
 
 
 ### Dependências
-* Respect\Rest - http://github.com/Respect/Rest#readme
-* Respect\Loader - http://github.com/Respect/Loader
+* Respect\Rest       - http://github.com/Respect/Rest#readme
+* Respect\Loader     - http://github.com/Respect/Loader
+* Respect\Config     - http://github.com/Respect/Config
 
 ### Instalação
 1. Clone o repositório;
 
 
 ### TODO
-1. Usar o Respect\Config para parametrizar a conexão com o banco de dados;
+1. TODO's no código.
 2. Normalizar o banco de dados e criar o script para migração dos dados desnormalizados para a estrutura normalizada;
 3. Melhorar o tratamento de erros;
 
